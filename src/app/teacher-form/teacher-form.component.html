@@ -1,6 +1,8 @@
-<div id="teacherList" *ngIf="teacher.length" > 0 >
+
+<a href="#" (click)="showTeacherForm()">Add new teacher</a>
+<div id="teacherList" *ngIf="teacher.length > 0 ">
   <h1>List of teachers</h1>
-  <li *ngFor="let teachers of teacher">{{teachers.name}}</li>
+  <li *ngFor="let teachers of teacher">{{teachers.firstName}}</li>
 </div>
 
 <div id="teacherFormDiv" *ngIf="isShowForm">

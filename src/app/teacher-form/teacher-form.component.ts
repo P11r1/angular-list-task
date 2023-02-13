@@ -15,7 +15,14 @@ export class TeacherFormComponent {
   age: string = '';
   email: string = '';
 
+  isShowForm: boolean = false;
+
   addTeacher(teacherForm: NgForm) {
     this.teacher.push(new Teachers(this.firstName, this.lastName, this.age, this.email))
+    teacherForm.reset();
+  }
+
+  showTeacherForm() {
+    this.isShowForm = true;
   }
 }
