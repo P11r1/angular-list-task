@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Teachers} from "../shared/modules/teachers";
 import {Students} from "../shared/modules/students";
 
@@ -7,7 +7,12 @@ import {Students} from "../shared/modules/students";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    this.teacher = this.fetchTeachers();
+
+    this.student = this.fetchStudents();
+  }
   title = 'angular-list-task';
 
 
@@ -19,17 +24,25 @@ export class AppComponent {
   teacherEmail: string[] = ["js@gmail.com", "mp@gmail.com", "bm@gmail.com", "jb@gmail.com"]
 
   fetchTeachers(): Teachers[] {
+
     let teacher: Teachers[] = [];
 
-    teacher.push(new Teachers("John", "Smith", "30", "js@gmail.com"));
+    teacher.push(new Teachers("Peter", "Griffin", "11", "pg@gmail.com"));
 
 
     return teacher;
   }
 
-  alertBox() {
-    alert("wss")
+  fetchStudents(): Students[] {
+
+    let student: Students[] = [];
+
+    student.push(new Students("Will", "Smith", "50", "ws@gmail.com"));
+
+
+    return student;
   }
+
 
   addTeacher() {
     let teacherName = this.teacherNames.at(Math.floor(Math.random() * this.teacher.length));
@@ -49,14 +62,16 @@ export class AppComponent {
   studentEmail: string[] = ["mm@gmail.com", "kl@gmail.com", "zx@gmail.com", "qw@gmail.com"]
 
   addStudent() {
-    let studentName = this.studentNames.at(Math.floor(Math.random() * this.teacher.length));
-    let studentLastName = this.studentLastNames.at(Math.floor(Math.random() * this.teacher.length));
-    let studentAges = this.studentAge.at(Math.floor(Math.random() * this.teacher.length));
-    let studentEmails = this.studentEmail.at(Math.floor(Math.random() * this.teacher.length));
+    let studentName = this.studentNames.at(Math.floor(Math.random() * this.student.length));
+    let studentLastName = this.studentLastNames.at(Math.floor(Math.random() * this.student.length));
+    let studentAges = this.studentAge.at(Math.floor(Math.random() * this.student.length));
+    let studentEmails = this.studentEmail.at(Math.floor(Math.random() * this.student.length));
 
     // @ts-ignore
-    this.teacher.push(new Teachers(teacherName, teacherLastName, teacherAges, teacherEmails));
+    this.student.push(new Students(studentName, studentLastName, studentAges, studentEmails));
   }
+
+
 
 
 }

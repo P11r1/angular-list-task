@@ -1,1 +1,19 @@
-<p>teacher works!</p>
+<p>{{teacherTitle}}</p>
+
+<table border="1">
+  <thead>
+  <tr><span style="background: black"></span> </tr>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Age</th>
+  <th>Email</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let teachers of teacher">
+    <td>{{teachers.firstName}}</td>
+    <td>{{teachers.lastName}}</td>
+    <td>{{teachers.age}}</td>
+    <td>{{teachers.email}}</td>
+  </tr>
+  </tbody>
+</table>
