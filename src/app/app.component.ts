@@ -15,6 +15,8 @@ export class AppComponent implements OnInit {
   }
   title = 'angular-list-task';
 
+  teacherTitle = "Teachers"
+
 
   teacher: Teachers[] = [];
 
@@ -56,6 +58,7 @@ export class AppComponent implements OnInit {
 
   student: Students[] = [];
 
+  studentTitle = "Students"
   studentNames: string[] = ["Mark", "Mike", "Clark", "Ringo"];
   studentLastNames: string[] = ["Musk", "Suva", "Buffet", "Roosaare"];
   studentAge: string[] = ["55", "45", "21", "60"]

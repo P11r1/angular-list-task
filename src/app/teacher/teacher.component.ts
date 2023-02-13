@@ -11,6 +11,8 @@ export class TeacherComponent implements OnInit {
   @Input() teacherTitle : string = '';
 
   @Input() teacher : Teachers[] = [];
+
+
   ngOnInit(): void {
   }
 

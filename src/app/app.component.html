@@ -356,51 +356,14 @@
   <h2>Homework</h2>
   <p>Here are some links to help you get started:</p>
 
-  <h3>Teachers</h3>
+
 
   <button class="card card-small" (click)="addTeacher()">Add teacher!</button>
-
-  <table border="1">
-    <thead>
-    <tr><span style="background: black"></span> </tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Age</th>
-    <th>Email</th>
-    </thead>
-    <tbody>
-    <tr *ngFor="let teachers of teacher">
-      <td>{{teachers.firstName}}</td>
-      <td>{{teachers.lastName}}</td>
-      <td>{{teachers.age}}</td>
-      <td>{{teachers.email}}</td>
-    </tr>
-    </tbody>
-  </table>
-
-  <h3>Students</h3>
+  <app-teacher [teacherTitle]="teacherTitle" [teacher]="teacher"></app-teacher>
+  <br/><br/><br/>
 
   <button class="card card-small" (click)="addStudent()">Add student!</button>
-
-
-  <table border="1">
-
-    <thead>
-    <tr></tr>
-    <th >First Name</th>
-    <th>Last Name</th>
-    <th>Age</th>
-    <th>Email</th>
-    </thead>
-    <tbody>
-    <tr *ngFor="let students of student">
-      <td>{{students.firstName}}</td>
-      <td>{{students.lastName}}</td>
-      <td>{{students.age}}</td>
-      <td>{{students.email}}</td>
-    </tr>
-    </tbody>
-  </table>
+  <app-student [studentTitle]="studentTitle" [student]="student"></app-student>
 
 
 
