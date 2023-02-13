@@ -1,0 +1,21 @@
+import { Component } from '@angular/core';
+import {Teachers} from "../../shared/modules/teachers";
+import {NgForm} from "@angular/forms";
+
+@Component({
+  selector: 'app-teacher-form',
+  templateUrl: './teacher-form.component.html',
+  styleUrls: ['./teacher-form.component.css']
+})
+export class TeacherFormComponent {
+
+  teacher: Teachers[] = [];
+  firstName: string = '';
+  lastName: string = '';
+  age: string = '';
+  email: string = '';
+
+  addTeacher(teacherForm: NgForm) {
+    this.teacher.push(new Teachers(this.firstName, this.lastName, this.age, this.email))
+  }
+}
