@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
     this.student = this.fetchStudents();
   }
-  title = 'angular-list-task';
+  title = 'Angular-list-task';
 
   teacherTitle = "Teachers"
 
