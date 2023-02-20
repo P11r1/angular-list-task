@@ -13,12 +13,11 @@ export class AppComponent implements OnInit {
 
     this.student = this.fetchStudents();
   }
+
+  myImage: string = "assets/images/shutterstock_471693773.jpg"
   title = 'Angular-list-task';
-
-  teacherTitle = "Teachers"
-
-
   teacher: Teachers[] = [];
+  student: Students[] = [];
 
   teacherNames: string[] = ["Marko", "John", "Bruno", "Jim"];
   teacherLastNames: string[] = ["Piir", "Smith", "Musk", "Branson"];
@@ -35,17 +34,6 @@ export class AppComponent implements OnInit {
     return teacher;
   }
 
-  fetchStudents(): Students[] {
-
-    let student: Students[] = [];
-
-    student.push(new Students("Will", "Smith", "50", "ws@gmail.com"));
-
-
-    return student;
-  }
-
-
   addTeacher() {
     let teacherName = this.teacherNames.at(Math.floor(Math.random() * this.teacher.length));
     let teacherLastName = this.teacherLastNames.at(Math.floor(Math.random() * this.teacher.length));
@@ -56,13 +44,21 @@ export class AppComponent implements OnInit {
     this.teacher.push(new Teachers(teacherName, teacherLastName, teacherAges, teacherEmails));
   }
 
-  student: Students[] = [];
-
-  studentTitle = "Students"
   studentNames: string[] = ["Mark", "Mike", "Clark", "Ringo"];
   studentLastNames: string[] = ["Musk", "Suva", "Buffet", "Roosaare"];
   studentAge: string[] = ["55", "45", "21", "60"]
   studentEmail: string[] = ["mm@gmail.com", "kl@gmail.com", "zx@gmail.com", "qw@gmail.com"]
+
+  fetchStudents(): Students[] {
+
+    let student: Students[] = [];
+
+
+    student.push(new Students("Will", "Smith", "50", "ws@gmail.com"));
+
+
+    return student;
+  }
 
   addStudent() {
     let studentName = this.studentNames.at(Math.floor(Math.random() * this.student.length));

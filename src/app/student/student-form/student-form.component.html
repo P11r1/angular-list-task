@@ -1,0 +1,48 @@
+
+<!--<a href="#" (click)="showStudentForm()">Add new student</a>-->
+<br/><br/><br/>
+<div id="studentList" *ngIf="students.length > 0">
+  <h1>List of Student</h1>
+  <ul>
+    <li *ngFor="let student of students">{{student.firstName }}
+    </li>
+  </ul>
+</div>
+
+<div id="studentFormDiv">
+  <h3>Add a new student</h3>
+
+  <form id="studentForm" #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)">
+    <label for="firstName" >First Name</label>
+    <input type="text" name="firstName" id="firstName" [(ngModel)]="firstName" />
+    <br/>
+    <label for="lastName" >Last Name</label>
+    <input type="text" name="lastName" id="lastName" [(ngModel)]="lastName" />
+    <br/>
+    <label for="Age" > Age</label>
+    <input type="text" name="age" id="age" [(ngModel)]="age"/>
+    <br/>
+    <label for="eMail">Email:</label>
+    <input type="text" name="email" id="email" [(ngModel)]="email">
+    <br/>
+    <button type="submit">Add student!</button>
+  </form>
+</div>
+
+<!--<p>-->
+<!--  <mat-form-field appearance="fill">-->
+<!--    <mat-label>Fill form field</mat-label>-->
+<!--    <input matInput placeholder="Placeholder">-->
+<!--    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+<!--    <mat-hint>Hint</mat-hint>-->
+<!--  </mat-form-field>-->
+<!--</p>-->
+<!--<p>-->
+<!--  <mat-form-field appearance="outline">-->
+<!--    <mat-label>Outline form field</mat-label>-->
+<!--    <input matInput placeholder="Placeholder">-->
+<!--    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+<!--    <mat-hint>Hint</mat-hint>-->
+<!--  </mat-form-field>-->
+<!--</p>-->
+

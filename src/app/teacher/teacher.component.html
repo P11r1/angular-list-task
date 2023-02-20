@@ -1,21 +1,61 @@
-<p>{{teacherTitle}}</p>
+<!--<p>{{teacherTitle}}</p>-->
 
-<table border="1">
-  <thead>
-  <tr><span style="background: black"></span> </tr>
-  <th>First Name</th>
-  <th>Last Name</th>
-  <th>Age</th>
-  <th>Email</th>
-  </thead>
-  <tbody>
-  <tr *ngFor="let teachers of teacher">
-    <td>{{teachers.firstName}}</td>
-    <td>{{teachers.lastName}}</td>
-    <td>{{teachers.age}}</td>
-    <td>{{teachers.email}}</td>
-  </tr>
-  </tbody>
+<!--<table border="1">-->
+<!--  <thead>-->
+<!--  <tr><span style="background: black"></span> </tr>-->
+<!--  <th>First Name</th>-->
+<!--  <th>Last Name</th>-->
+<!--  <th>Age</th>-->
+<!--  <th>Email</th>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let teachers of teacher">-->
+<!--    <td>{{teachers.firstName}}</td>-->
+<!--    <td>{{teachers.lastName}}</td>-->
+<!--    <td>{{teachers.age}}</td>-->
+<!--    <td>{{teachers.email}}</td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+<div class="demo-button-container">
+  <button mat-raised-button (click)="addTeacher()" class="demo-button">
+    Add data
+  </button>
+  <button
+    mat-raised-button
+    [disabled]="!teacher.length" (click)="removeData()" class="demo-button">
+    Remove data
+  </button>
+</div>
+
+<table mat-table [dataSource]="teacher" class="mat-elevation-z8 demo-table">
+  <!-- First name Column -->
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef>First name</th>
+    <td mat-cell *matCellDef="let element">{{element.firstName}}</td>
+  </ng-container>
+
+  <!-- Last name Column -->
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef>Last name</th>
+    <td mat-cell *matCellDef="let element">{{element.lastName}}</td>
+  </ng-container>
+
+  <!-- Age Column -->
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef>Age</th>
+    <td mat-cell *matCellDef="let element">{{element.age}}</td>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let element">{{element.email}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<app-teacher-form></app-teacher-form>
+

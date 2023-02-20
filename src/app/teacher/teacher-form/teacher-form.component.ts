@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {Teachers} from "../../shared/modules/teachers";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {Teachers} from "../../../shared/modules/teachers";
 import {NgForm} from "@angular/forms";
 
 @Component({
@@ -7,7 +7,7 @@ import {NgForm} from "@angular/forms";
   templateUrl: './teacher-form.component.html',
   styleUrls: ['./teacher-form.component.css']
 })
-export class TeacherFormComponent {
+export class TeacherFormComponent implements OnInit{
 
   teacher: Teachers[] = [];
   firstName: string = '';
@@ -25,4 +25,11 @@ export class TeacherFormComponent {
   showTeacherForm() {
     this.isShowForm = true;
   }
+
+
+
+  ngOnInit(): void {
+  }
+
+
 }

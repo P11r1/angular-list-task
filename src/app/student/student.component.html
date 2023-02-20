@@ -1,22 +1,61 @@
-<p>{{studentTitle}}</p>
+<!--<p>{{studentTitle}}</p>-->
 
-<table border="1">
+<!--<table border="1">-->
 
-  <thead>
-  <tr></tr>
-  <th >First Name</th>
-  <th>Last Name</th>
-  <th>Age</th>
-  <th>Email</th>
-  </thead>
-  <tbody>
-  <tr *ngFor="let students of student">
-    <td>{{students.firstName}}</td>
-    <td>{{students.lastName}}</td>
-    <td>{{students.age}}</td>
-    <td>{{students.email}}</td>
-  </tr>
-  </tbody>
+<!--  <thead>-->
+<!--  <tr></tr>-->
+<!--  <th >First Name</th>-->
+<!--  <th>Last Name</th>-->
+<!--  <th>Age</th>-->
+<!--  <th>Email</th>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let students of student">-->
+<!--    <td>{{students.firstName}}</td>-->
+<!--    <td>{{students.lastName}}</td>-->
+<!--    <td>{{students.age}}</td>-->
+<!--    <td>{{students.email}}</td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+<div class="demo-button-container">
+  <button mat-raised-button (click)="addStudent()" class="demo-button">
+    Add data
+  </button>
+  <button
+    mat-raised-button
+    [disabled]="!student.length" (click)="removeData()" class="demo-button">
+    Remove data
+  </button>
+</div>
+
+<table mat-table [dataSource]="student" class="mat-elevation-z8 demo-table">
+  <!-- First name Column -->
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef>First name</th>
+    <td mat-cell *matCellDef="let element">{{element.firstName}}</td>
+  </ng-container>
+
+  <!-- Last name Column -->
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef>Last name</th>
+    <td mat-cell *matCellDef="let element">{{element.lastName}}</td>
+  </ng-container>
+
+  <!-- Age Column -->
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef>Age</th>
+    <td mat-cell *matCellDef="let element">{{element.age}}</td>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let element">{{element.email}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<app-student-form></app-student-form>
