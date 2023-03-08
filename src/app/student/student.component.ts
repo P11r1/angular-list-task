@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {Students} from "../../shared/modules/students";
+import {Students} from "../../shared/models/students";
 import {MatTable} from "@angular/material/table";
 
 

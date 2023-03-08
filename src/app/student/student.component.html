@@ -20,7 +20,7 @@
 <!--</table>-->
 
 <div class="demo-button-container">
-  <button mat-raised-button (click)="addStudent()" class="demo-button">
+  <button mat-raised-button  (click)="addStudent()" class="demo-button">
     Add data
   </button>
   <button
@@ -30,11 +30,11 @@
   </button>
 </div>
 
-<table mat-table [dataSource]="student" class="mat-elevation-z8 demo-table">
+<table mat-table class="mat-table" [dataSource]="student" >
   <!-- First name Column -->
   <ng-container matColumnDef="firstName">
-    <th mat-header-cell *matHeaderCellDef>First name</th>
-    <td mat-cell *matCellDef="let element">{{element.firstName}}</td>
+    <th mat-header-cell class="mat-header-cell" *matHeaderCellDef>First name</th>
+    <td mat-cell class="mat-cell" *matCellDef="let element">{{element.firstName}}</td>
   </ng-container>
 
   <!-- Last name Column -->
@@ -45,8 +45,8 @@
 
   <!-- Age Column -->
   <ng-container matColumnDef="age">
-    <th mat-header-cell *matHeaderCellDef>Age</th>
-    <td mat-cell *matCellDef="let element">{{element.age}}</td>
+    <th mat-header-cell class="mat-header-cell" *matHeaderCellDef>Age</th>
+    <td mat-cell class="mat-cell" *matCellDef="let element">{{element.age}}</td>
   </ng-container>
 
   <!-- Email Column -->

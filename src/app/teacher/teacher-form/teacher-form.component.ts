@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Teachers} from "../../../shared/modules/teachers";
+import {Teachers} from "../../../shared/models/teachers";
 import {NgForm} from "@angular/forms";
 
 @Component({

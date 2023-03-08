@@ -1,0 +1,11 @@
+.mat-table {
+  background-color: darkolivegreen;
+}
+
+.mat-cell, .mat-header-cell {
+  color: chartreuse;
+}
+
+.mat-raised-button {
+  background-color: blueviolet;
+}

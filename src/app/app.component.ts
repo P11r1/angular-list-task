@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Teachers} from "../shared/modules/teachers";
-import {Students} from "../shared/modules/students";
+import {Teachers} from "../shared/models/teachers";
+import {Students} from "../shared/models/students";
 
 @Component({
   selector: 'app-root',
@@ -9,68 +9,8 @@ import {Students} from "../shared/modules/students";
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    this.teacher = this.fetchTeachers();
 
-    this.student = this.fetchStudents();
   }
-
-  myImage: string = "assets/images/shutterstock_471693773.jpg"
   title = 'Angular-list-task';
-  teacher: Teachers[] = [];
-  student: Students[] = [];
-
-  teacherNames: string[] = ["Marko", "John", "Bruno", "Jim"];
-  teacherLastNames: string[] = ["Piir", "Smith", "Musk", "Branson"];
-  teacherAge: string[] = ["20", "22", "23", "65"]
-  teacherEmail: string[] = ["js@gmail.com", "mp@gmail.com", "bm@gmail.com", "jb@gmail.com"]
-
-  fetchTeachers(): Teachers[] {
-
-    let teacher: Teachers[] = [];
-
-    teacher.push(new Teachers("Peter", "Griffin", "11", "pg@gmail.com"));
-
-
-    return teacher;
-  }
-
-  addTeacher() {
-    let teacherName = this.teacherNames.at(Math.floor(Math.random() * this.teacher.length));
-    let teacherLastName = this.teacherLastNames.at(Math.floor(Math.random() * this.teacher.length));
-    let teacherAges = this.teacherAge.at(Math.floor(Math.random() * this.teacher.length));
-    let teacherEmails = this.teacherEmail.at(Math.floor(Math.random() * this.teacher.length));
-
-    // @ts-ignore
-    this.teacher.push(new Teachers(teacherName, teacherLastName, teacherAges, teacherEmails));
-  }
-
-  studentNames: string[] = ["Mark", "Mike", "Clark", "Ringo"];
-  studentLastNames: string[] = ["Musk", "Suva", "Buffet", "Roosaare"];
-  studentAge: string[] = ["55", "45", "21", "60"]
-  studentEmail: string[] = ["mm@gmail.com", "kl@gmail.com", "zx@gmail.com", "qw@gmail.com"]
-
-  fetchStudents(): Students[] {
-
-    let student: Students[] = [];
-
-
-    student.push(new Students("Will", "Smith", "50", "ws@gmail.com"));
-
-
-    return student;
-  }
-
-  addStudent() {
-    let studentName = this.studentNames.at(Math.floor(Math.random() * this.student.length));
-    let studentLastName = this.studentLastNames.at(Math.floor(Math.random() * this.student.length));
-    let studentAges = this.studentAge.at(Math.floor(Math.random() * this.student.length));
-    let studentEmails = this.studentEmail.at(Math.floor(Math.random() * this.student.length));
-
-    // @ts-ignore
-    this.student.push(new Students(studentName, studentLastName, studentAges, studentEmails));
-  }
-
-
-
 
 }

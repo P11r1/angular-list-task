@@ -2,3 +2,11 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.image{
+  height:50em; background-size:cover; width:auto;
+  background-image:url('src/app/assets/images/shutterstock_471693773.jpg');
+  background-position:50% 50%;
+}
+
+
